@@ -7,7 +7,7 @@ export const Animation101Screen = () => {
   
   return (
     <View style={styles.container}>
-      {/* <View style={styles.box}  /> */}
+
       <Animated.View        
       {
         ...panResponder.panHandlers

@@ -1,7 +1,5 @@
 import React from 'react';
-
 import {View, Text} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 import {FlatListMenuItem} from '../components/FlatListMenuItem';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import { styles } from '../theme/appTheme';
@@ -16,6 +14,11 @@ const menuItems = [
     name: 'Animation 101',
     icon: 'alarm-outline',
     components: 'Animation101Screen',
+  },
+  {
+    name: 'Switchs',
+    icon: 'toggle-outline',
+    components: 'SwitchScreen',
   },
 ];
 

@@ -5,6 +5,7 @@ import {styles} from '../theme/appTheme';
 import { useNavigation } from '@react-navigation/native';
 import { StackParams } from '../navigation/StackNavigator';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Title } from './Title';
 
 interface Item {
   name: string;
@@ -45,14 +46,7 @@ export const FlatListMenuItem = ({data}: Props) => {
         }}
       />
     );
-  };
-  const header = () => {
-    return (
-      <View style={{marginBottom:10}}>
-        <Text style={styles.title}>Opciones de Menú</Text>
-      </View>
-    );
-  };
+  };  
 
   return (
     <FlatList
@@ -60,7 +54,7 @@ export const FlatListMenuItem = ({data}: Props) => {
       renderItem={({item}) => itemMenu(item)}
       keyExtractor={item => item.name}
       ItemSeparatorComponent={separator}
-      ListHeaderComponent={header}
+      ListHeaderComponent={() => < Title title='Opciones de Menú'/>}
     />
   );
 };
