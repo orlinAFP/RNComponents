@@ -20,6 +20,16 @@ const menuItems = [
     icon: 'toggle-outline',
     components: 'SwitchScreen',
   },
+  {
+    name: 'Alert',
+    icon: 'alert-circle-outline',
+    components: 'AlertScreen',
+  },
+  {
+    name: 'Inputs',
+    icon: 'document-text-outline',
+    components: 'InputScreen',
+  },
 ];
 
 export const HomeScreen = () => {

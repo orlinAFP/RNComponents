@@ -29,7 +29,7 @@ export const FlatListMenuItem = ({data}: Props) => {
         <Text style={{marginLeft:10}}>{item.name}</Text>
         <View style={{flex:1}}/>
         <Text>
-          <Icon name="chevron-forward-outline" size={25} color="gray" />
+          <Icon name="chevron-forward-outline" size={25} color="purple" />
         </Text>
       </View>
       </TouchableOpacity>

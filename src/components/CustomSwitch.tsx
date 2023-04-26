@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import { Switch } from 'react-native'
+
 interface Props {
-    isOn: boolean
+    isOn: boolean;
+    onChange: (value:boolean) => void
 }
 
-export const CustomSwitch = ({ isOn }: Props) => {
+export const CustomSwitch = ({ isOn, onChange }: Props) => {
+    
     const [isEnabled, setIsEnabled] = useState(isOn);
     const toggleSwitch = () => {
-        setIsEnabled(!isEnabled)
+        setIsEnabled(!isEnabled);
+        onChange(!isEnabled);
     };
 
     return (
