@@ -5,6 +5,7 @@ import { Animation101Screen } from '../screen/Animation101Screen';
 import { SwitchScreen } from '../screen/SwitchScreen';
 import { AlertScreen } from '../screen/AlertScreen';
 import { InputScreen } from '../screen/InputScreen';
+import { PullToRefreshScreen } from '../screen/PullToRefreshScreen';
 
 export type StackParams = {
   HomeScreen: undefined;
@@ -12,7 +13,8 @@ export type StackParams = {
   Animation101Screen: undefined;
   SwitchScreen: undefined;
   AlertScreen: undefined;
-  InputScreen: undefined
+  InputScreen: undefined;
+  PullToRefreshScreen: undefined;
 };
 const Stack = createStackNavigator<StackParams>();
 
@@ -28,6 +30,7 @@ export const StackNavigation = () => {
       <Stack.Screen name="SwitchScreen" component={SwitchScreen} />
       <Stack.Screen name="AlertScreen" component={AlertScreen} />
       <Stack.Screen name="InputScreen" component={InputScreen} />
+      <Stack.Screen name="PullToRefreshScreen" component={PullToRefreshScreen} />
     </Stack.Navigator>
   );
 };

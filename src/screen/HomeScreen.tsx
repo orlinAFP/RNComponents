@@ -30,6 +30,11 @@ const menuItems = [
     icon: 'document-text-outline',
     components: 'InputScreen',
   },
+  {
+    name: 'Refresh',
+    icon: 'refresh-outline',
+    components: 'PullToRefreshScreen',
+  },
 ];
 
 export const HomeScreen = () => {
