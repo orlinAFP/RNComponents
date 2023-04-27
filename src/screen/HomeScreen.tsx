@@ -45,6 +45,11 @@ const menuItems = [
     icon: 'create-outline',
     components: 'modalScreen',
   },
+  {
+    name: 'Infinity Scroll',
+    icon: 'infinite-outline',
+    components: 'InfinityScrollScreen',
+  },
 ];
 
 export const HomeScreen = () => {

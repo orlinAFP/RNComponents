@@ -2,7 +2,7 @@ import {useRef} from 'react';
 import {Animated, Easing, PanResponder} from 'react-native';
 
 export const useFade = () => {
-  const opacity = useRef(new Animated.Value(0.4)).current;
+  const opacity = useRef(new Animated.Value(0.1)).current;
   const top = useRef(new Animated.Value(-100)).current;
   const pan = useRef(new Animated.ValueXY()).current;
 
