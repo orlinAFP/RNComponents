@@ -35,6 +35,16 @@ const menuItems = [
     icon: 'refresh-outline',
     components: 'PullToRefreshScreen',
   },
+  {
+    name: 'Section List',
+    icon: 'list-outline',
+    components: 'SectionListScreen',
+  },
+  {
+    name: 'Modal',
+    icon: 'create-outline',
+    components: 'modalScreen',
+  },
 ];
 
 export const HomeScreen = () => {
