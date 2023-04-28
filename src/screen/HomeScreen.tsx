@@ -55,6 +55,11 @@ const menuItems = [
     icon: 'albums-outline',
     components: 'SlidesScreen',
   },
+  {
+    name: 'Theme',
+    icon: 'eyedrop-outline',
+    components: 'ChangeThemeScreen',
+  },
 ];
 
 export const HomeScreen = () => {
