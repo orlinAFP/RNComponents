@@ -50,6 +50,11 @@ const menuItems = [
     icon: 'infinite-outline',
     components: 'InfinityScrollScreen',
   },
+  {
+    name: 'Slides',
+    icon: 'albums-outline',
+    components: 'SlidesScreen',
+  },
 ];
 
 export const HomeScreen = () => {
