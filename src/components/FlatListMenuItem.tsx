@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Text, FlatList, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {styles} from '../theme/appTheme';
@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackParams } from '../navigation/StackNavigator';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Title } from './Title';
+import { ThemeContext } from '../contexts/theme/ThemeContext';
 
 interface Item {
   name: string;
@@ -17,6 +18,7 @@ interface Props {
 }
 
 export const FlatListMenuItem = ({data}: Props) => {
+  const {theme:{colors}} = useContext(ThemeContext);
   const natigation = useNavigation<StackNavigationProp<StackParams>>();
   
   const itemMenu = (item: Item) => {
@@ -24,12 +26,12 @@ export const FlatListMenuItem = ({data}: Props) => {
       <TouchableOpacity activeOpacity={0.7} onPress={() => natigation.navigate(item.components as any)}>
       <View style={{flexDirection: 'row'}}>
         <Text>
-          <Icon name={item.icon} size={25} color="gray" />
+          <Icon name={item.icon} size={25} color={colors.primary} />
         </Text>
-        <Text style={{marginLeft:10}}>{item.name}</Text>
+        <Text style={{marginLeft:10, color:colors.text}}>{item.name}</Text>
         <View style={{flex:1}}/>
         <Text>
-          <Icon name="chevron-forward-outline" size={25} color="purple" />
+          <Icon name="chevron-forward-outline" size={25} color={colors.primary} />
         </Text>
       </View>
       </TouchableOpacity>

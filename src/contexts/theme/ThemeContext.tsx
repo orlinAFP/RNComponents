@@ -1,7 +1,9 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useEffect, useReducer, useState} from 'react';
+import {ThemeState, darkTheme, lightTheme, themeReducer} from './ThemeReducer';
+import {useColorScheme} from 'react-native';
 
 interface ThemeContextProps {
-  theme: any;
+  theme: ThemeState;
   setDarkTheme: () => void;
   setLightTheme: () => void;
 }
@@ -9,13 +11,23 @@ interface ThemeContextProps {
 export const ThemeContext = createContext<ThemeContextProps>({} as any);
 
 export const ThemeContextProvider = ({children}: any) => {
-  const theme = {};
+  const colorScheme = useColorScheme();
+
+  const [theme, dispatch] = useReducer(
+    themeReducer,
+    colorScheme === 'dark' ? darkTheme : lightTheme,
+  );
+
+  useEffect(() => {
+    if (colorScheme === 'dark') setDarkTheme();
+    if (colorScheme === 'light') setLightTheme();
+  }, [colorScheme]);
 
   const setDarkTheme = () => {
-    console.log('chage theme');
+    dispatch({type: 'set_dark_theme'});
   };
   const setLightTheme = () => {
-    console.log('chage theme 2');
+    dispatch({type: 'set_light_theme'});
   };
 
   return (

@@ -12,6 +12,8 @@ import {InfinityScrollScreen} from '../screen/InfinityScrollScreen';
 import {SlidesScreen} from '../screen/SlidesScreen';
 import {ChangeThemeScreen} from '../screen/ChangeThemeScreen';
 import { NavigationContainer } from '@react-navigation/native';
+import { ThemeContext } from '../contexts/theme/ThemeContext';
+import { useContext } from 'react';
 
 export type StackParams = {
   HomeScreen: undefined;
@@ -30,8 +32,12 @@ export type StackParams = {
 const Stack = createStackNavigator<StackParams>();
 
 export const StackNavigation = () => {
+  const {theme} = useContext(ThemeContext);
+  
   return (
-    <NavigationContainer>
+    <NavigationContainer
+    theme={theme}
+    >
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
